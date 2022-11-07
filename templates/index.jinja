@@ -1,0 +1,24 @@
+{%extends 'base.jinja'%}
+{%block content%}
+<main class="container-fluid">
+    {% if videos|length == 0 %}
+    <p>Aucun video à afficher</p>
+    {% else %}
+    <ul class="list-group flex-row justify-content-around">
+        {% for i in range(videos|length) %}
+        <li class="card p-0 m-5 w-100">
+            <div class=" card-header m-0 p-0">
+                <a href="#" class="card-link" style="text-decoration: none;">{{videos[i].titre}}</a>
+            </div>
+            <div class="card-body m-0 p-0">
+                <video class="rounded-bottom m-0 p-0 w-100" src="{{srcs[i+1]}}" controls>
+                    Your browser does not support the video tag.</video>
+                <a href="#">{{etiquettes[i]}}</a>
+
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</main>
+{% endblock %}

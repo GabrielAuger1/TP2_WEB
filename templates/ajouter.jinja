@@ -1,0 +1,40 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    <div class="border rounded-3 mx-5 my-2">
+        <div class="d-flex justify-content-around mt-4">
+            <div>
+                <label for="titre" class="form-label text-primary fw-bolder fs-5 w-100">titre</label>
+                <input type="text" class="form-control" name="titre" id="titre">
+            </div>
+            <div>
+                <label for="description" class="form-label text-primary fw-bolder fs-5 w-100">description</label>
+                <input type="text" class="form-control" name="description" id="description">
+            </div>
+            <div>
+                <span class="text-primary fw-bolder fs-5">etiquettes</span>
+                <ul class="d-flex flex-wrap btn-group-vertical list-unstyled">
+                    {% for etiquette in etiquettes %}
+                    <li class="list-unstyled">
+                        <input type="checkbox" class="btn-check" value="{{etiquette.id}}" name="etiquette"
+                            id="{{etiquette.libelle}}">
+                        <label for="{{etiquette.libelle}}"
+                            class="btn btn-light fw-bolder w-100">{{etiquette.libelle}}</label>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <label for="fichier" class="form-label text-primary fw-bolder fs-5 w-100">nom du fichier</label>
+                <input type="file" accept=".mp4, .mov, .wmv, .mpg, .webm, .mkv, .swf" class="form-control"
+                    name="fichier" id="fichier">
+
+            </div>
+        </div>
+        <div class="text-center m-4">
+            <button type="submit" class="btn btn-primary">Ajouter le video</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

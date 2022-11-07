@@ -1,0 +1,15 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+<div class="container">
+    <h2>{{video.titre}}</h2>
+    <video class="w-100" controls>
+        <source src="/{{src}}">
+    </video>
+    {% for etiquette in etiquettes %}
+    <a href="#" class="btn btn-outline-primary fs-6">{{etiquette}}</a>
+    {% endfor %}
+    <h2>{{description}}</h2>
+</div>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="text/css" href="/static/css/normalize.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="container-fluid">
+        <div class="btn-toolbar justify-content-between">
+            <nav class="navbar rounded-3">
+                <a href="/" class="mx-2 nav-item navbar-brand link-primary"><img height="70px" width="auto"
+                        src="/static/img/brandNav.png" alt="home"></a>
+                <a href="/ajouter" class="mx-2 btn btn-outline-primary">Ajouter un video</a>
+                <a href="/etiquettes" class="mx-2 btn btn-outline-primary">Étiquettes</a>
+            </nav>
+            <nav class="navbar rounded-3">
+                <form action="/recherche" class="container input-group rounded-start">
+                    <input type="text" class="form-control" id="mot-cle" name="mot-cle"
+                        placeholder="rechercher un video" aria-label="Search" aria-describedby="search-addon">
+                    <button id="search-button" type="submit" class="btn btn-primary">
+                        <i class="fas fa-search">Rechercher</i>
+                    </button>
+                </form>
+                <a href="/" class="mx-2 btn btn-outline-primary">Langue</a>
+            </nav>
+        </div>
+    </header>
+
+    <body class="fs-5">
+        {%block content%}
+
+        {%endblock%}
+    </body>
+    <footer>Gabriel Auger 2022, Cegep FX-Garneau</footer>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{% extends "base.jinja" %}
+{% block content %}
+<ul class="list-group">
+    {% if videos|length > 0 %}
+    {% for video in videos %}
+    <li class="list-group-item d-flex fw-bold">
+        <a href="{{url_for('video', id_video=video.id)}}" class="fs-4 page-link link-primary">{{video.titre}}</a>
+        <p class="text-secondary"> <span class="px-2 fs-4">-</span> {{video.description}}</p>
+    </li>
+    {% endfor %}
+    {% else %}
+    <h2 class="fw-bold text-center text-primary">Aucun video trouvé!</h2>
+    {% endif %}
+
+</ul>
+{% endblock %}
